@@ -1,0 +1,55 @@
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class CalculatorTest {
+
+    @Test
+    public void testCalculator() {
+        // Test dodavanje
+        String result = Calculator.Run("5+2");
+        assertEquals("7.0", result);
+
+        // Test oduzimanje
+        result = Calculator.Run("8-3");
+        assertEquals("5.0", result);
+
+        // Test mnozenje
+        result = Calculator.Run("4*3");
+        assertEquals("12.0", result);
+
+        // Test deljenje
+        result = Calculator.Run("10/2");
+        assertEquals("5.0", result);
+
+        // Test kompleksne radnje
+        result = Calculator.Run("5+3*2-6/3");
+        assertEquals("9.0", result);
+
+        // Test deljenje sa nulom
+        result = Calculator.Run("10/0");
+        assertEquals("Infinity", result);
+
+        // Test neisprane radnje
+        result = Calculator.Run("5+2+");
+        assertEquals("ERROR", result);
+    }
+}
+
+REZULTATI:
+
+Ovaj kod izvršava osnovne matematičke funkcionalnosti i dozvoljava korisnicima da obavljaju osnovne proračune.
+
+Potrebne izmene:
+
+
+ToString treba promeniti u toString kako bi bila prilagodjena za Java nazive metoda.
+
+ Metoda Calculate ne prepoznaje zagrade.
+
+ U odredjenim slucajevima prikazuju se netacni decimalni brojevi.
+
+ZAKLJUCAK:
+
+Iako u sustini program funkcionise ispravno i nesmeta i bez predlozenih izmena, izmene je potrebno izvrsiti i potencijalno 
+se skoncentrisati na dodavanje vise opcija ovom osnovnom tipu Kalkulatora.
+
